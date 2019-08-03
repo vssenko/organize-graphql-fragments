@@ -28,22 +28,12 @@ fragment PostCommentsProperties on Post{
   }
 }`;
 
-console.log(JSON.stringify(PostFragments.BASE));
 
 function getGqlString(doc) {
   return doc.loc && doc.loc.source.body;
 }
 
 describe('combineFragments', () => {
-  it('should combine fragments and use entity as model name', () =>{
-    const resultFragment = combineFragments({
-      entity: 'Post',
-      fragments: [PostFragments.BASE, PostFragments.BODY, PostFragments.COMMENTS]
-    });
-
-    assert.equal(getGqlString(resultFragment).trim(), getGqlString(testCombinedDoc).trim());
-  });
-
   it('should combine fragments with passed array and use model name from first fragment', () =>{
     const resultFragment = combineFragments([PostFragments.BASE, PostFragments.BODY, PostFragments.COMMENTS]);
 

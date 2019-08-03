@@ -1,17 +1,7 @@
 import gql from 'graphql-tag';
 
-function combineFragments(inputParams) {
-  if (Array.isArray(inputParams)){
-    const fragments = inputParams;
-    const entity = getTypeName(fragments[0]);
-    return _combineFragments({entity, fragments});
-  } else {
-    return _combineFragments(inputParams);
-  }
-}
-
-function _combineFragments({ entity, combinedName, fragments }){
-  combinedName = combinedName || `${entity}Properties`;
+function combineFragments(fragments) {
+  const entity = getTypeName(fragments[0]);
 
   const getFragmentName = f => f.definitions[0].name.value;
 
@@ -19,7 +9,7 @@ function _combineFragments({ entity, combinedName, fragments }){
   `);
 
   const gqlString = `
-    fragment ${combinedName} on ${entity}{
+    fragment ${entity}Properties on ${entity}{
       ${fragmentStrings}
     }
   `;
