@@ -1,0 +1,31 @@
+{
+  "name": "organize-graphql-fragments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
+    "mjs-mocha": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  },
+  "scripts": {
+    "test": "mjs-mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vssenko/organize-graphql-fragments.git"
+  },
+  "author": "Vitaly Senko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vssenko/organize-graphql-fragments/issues"
+  },
+  "homepage": "https://github.com/vssenko/organize-graphql-fragments#readme"
+}
